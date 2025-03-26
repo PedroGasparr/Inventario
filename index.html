@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventário de Paletes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sistema de Inventário</h1>
+            <div class="theme-switcher">
+                <button id="themeToggle">Alternar Tema</button>
+            </div>
+        </div>
+        
+        <div class="menu">
+            <button id="btnAdicionar" class="active">Adicionar Palete</button>
+            <button id="btnRemover">Remover Palete</button>
+            <button id="btnConsultar">Consultar Palete</button>
+            <button id="btnBlocos">Visualizar Blocos</button>
+        </div>
+        
+        <div id="adicionarPalete" class="content-section">
+            <h2>Adicionar Palete</h2>
+            <div class="form-group">
+                <label for="codigoBarras">Código de Barras:</label>
+                <input type="text" id="codigoBarras" placeholder="Escanear código de barras">
+            </div>
+            <div class="form-group">
+                <label for="bloco">Bloco:</label>
+                <select id="bloco">
+                    <option value="">Selecione um bloco</option>
+                    <option value="b1">B1</option>
+                    <option value="b2">B2</option>
+                    <option value="b3">B3</option>
+                    <option value="b4">B4</option>
+                    <option value="b5">B5</option>
+                    <option value="b6">B6</option>
+                    <option value="b7">B7</option>
+                    <option value="b8">B8</option>
+                    <option value="b9">B9</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="posicao">Posição (1-6):</label>
+                <select id="posicao" disabled>
+                    <option value="">Selecione primeiro o bloco</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="altura">Altura (1-3):</label>
+                <select id="altura" disabled>
+                    <option value="">Selecione a posição primeiro</option>
+                    <option value="1">Altura 1</option>
+                    <option value="2">Altura 2</option>
+                    <option value="3">Altura 3</option>
+                </select>
+            </div>
+            <div id="familiasContainer">
+                <div class="familia-item">
+                    <div class="form-group">
+                        <label>Família:</label>
+                        <input type="text" class="familia" placeholder="Nome da família">
+                    </div>
+                    <div class="form-group">
+                        <label>Quantidade:</label>
+                        <input type="number" class="quantidade" placeholder="Qtd" min="1" max="100">
+                    </div>
+                    <button class="btn-remove-familia">×</button>
+                </div>
+            </div>
+            <button id="btnAddFamilia" class="btn-secondary">+ Adicionar Família</button>
+            <button id="btnSalvar" class="btn-primary">Salvar Palete</button>
+            <div id="mensagem" class="mensagem"></div>
+        </div>
+        
+        <div id="removerPalete" class="content-section hidden">
+            <h2>Remover Palete</h2>
+            <div class="form-group">
+                <label for="codigoBarrasRemover">Código de Barras:</label>
+                <input type="text" id="codigoBarrasRemover" placeholder="Escanear código de barras">
+            </div>
+            <button id="btnRemoverPalete" class="btn-danger">Remover Palete</button>
+            <div id="infoPalete" class="info-palete"></div>
+            <div id="mensagemRemover" class="mensagem"></div>
+        </div>
+        
+        <div id="consultarPalete" class="content-section hidden">
+            <h2>Consultar Palete</h2>
+            <div class="form-group">
+                <label for="codigoBarrasConsultar">Código de Barras:</label>
+                <input type="text" id="codigoBarrasConsultar" placeholder="Escanear código de barras">
+            </div>
+            <button id="btnConsultarPalete" class="btn-primary">Consultar</button>
+            <div id="infoConsulta" class="info-palete"></div>
+        </div>
+        
+        <div id="visualizarBlocos" class="content-section hidden">
+            <h2>Visão Geral dos Blocos</h2>
+            <div class="blocos-container" id="blocosContainer">
+                <!-- Blocos serão gerados dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
