@@ -2,15 +2,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase
 import { getDatabase, ref, set, get, remove, onValue, update } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCRrFL9kSUeWrqknnusEGZJCKQLWvkubzo",
-  authDomain: "inventario-guizilim.firebaseapp.com",
-  databaseURL: "https://inventario-guizilim-default-rtdb.firebaseio.com",
-  projectId: "inventario-guizilim",
-  storageBucket: "inventario-guizilim.appspot.com",
-  messagingSenderId: "633517952118",
-  appId: "1:633517952118:web:c3d44f6d439c1bec75e357",
-  measurementId: "G-E7LJFPY8NM"
-};
+    apiKey: "AIzaSyCkd5Pa3ZOZm21toVESWotKb-IwqFZngYI",
+    authDomain: "invetario-cd.firebaseapp.com",
+    projectId: "invetario-cd",
+    storageBucket: "invetario-cd.firebasestorage.app",
+    messagingSenderId: "481050355912",
+    appId: "1:481050355912:web:0fa7a08f89af2bf76d5dfd",
+    measurementId: "G-67G43MRSMZ"
+  };
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
